@@ -66,6 +66,17 @@ export const typeDefs = gql`
     id: ID!
   }
   type Query {
-    hello: String
+    user: User
+    artists: [Artist]
+    bands: [Band]
+    albums: [Album]
+    genres: [Genre]
+    tracks: [Track]
+    favourites: [Favourites]
+    artist: Artist
+    band: Band
+    album: Album
+    genre: Genre
+    track: Track
   }
 `;
