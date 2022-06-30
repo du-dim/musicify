@@ -1,6 +1,21 @@
-import axios from 'axios';
+import fetch from 'node-fetch';
 import 'dotenv/config';
 import { IBand } from '../../types/interface.js';
 
 const BAND_URL = process.env.BAND_URL as string;
-export const bands: IBand[] = await axios.get(BAND_URL);
+
+export const bands = async () => {
+  try {
+    const response = await fetch(BAND_URL);
+    if (response.ok) {
+      const data = (await response.json()) as { items: IBand[] };
+      data.items.forEach((d) => {
+        d.id = d._id;
+      });
+      return data.items;
+    }
+    throw Error('Ошибка HTTP: ' + response.status);
+  } catch (error) {
+    console.log(`${error}`);
+  }
+};

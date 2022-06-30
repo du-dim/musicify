@@ -1,5 +1,5 @@
 import { gql } from 'apollo-server';
-import * as schema from '../schemas/_redirectionSchemas.js';
+import * as schema from './schemas/_redirect.js';
 
 export const typeDefs = gql`
   ${schema.genre}
