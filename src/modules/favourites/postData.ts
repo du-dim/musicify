@@ -1,10 +1,10 @@
 import fetch from 'node-fetch';
 import 'dotenv/config';
-import { IFavorites } from '../../types/interface.js';
+import { IFavourites } from '../../types/interface.js';
 
 const FAVOURITE_URL = process.env.FAVOURITE_URL as string;
 
-export const postData = async (body: IFavorites, token: string) => {
+export const postData = async (body: IFavourites, token: string) => {
   try {
     const response = await fetch(FAVOURITE_URL, {
       method: 'POST',
@@ -15,8 +15,12 @@ export const postData = async (body: IFavorites, token: string) => {
       body: JSON.stringify(body)
     });
     if (response.ok) {
-      const data = (await response.json()) as IFavorites;
+      const data = (await response.json()) as IFavourites;
       data.id = data._id;
+      data.bands = data.bandsIds;
+      data.tracks = data.tracksIds;
+      data.genres = data.genresIds;
+      data.artists = data.artistsIds;
       return data;
     }
     throw Error('Ошибка HTTP: ' + response.status);

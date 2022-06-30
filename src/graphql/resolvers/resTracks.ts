@@ -1,14 +1,14 @@
-import * as getData from '../../modules/redirectionModules.js';
-import { IGenre } from '../../types/interface.js';
-import { postData } from '../../modules/genres/postData.js';
+import { ITrack } from '../../types/interface.js';
+import { getData } from '../../modules/tracks/getData.js';
+import { postData } from '../../modules/tracks/postData.js';
 
-export const resGenres = {
+export const resTracks = {
   Query: {
-    genres: async () => await getData.genres()
+    tracks: async () => await getData()
   },
   Mutation: {
-    createGenre: async (_: any, genreInput: { body: IGenre }, context: { token: string }) => {
-      return await postData(genreInput.body, context.token);
+    createTrack: async (_: any, trackInput: { body: ITrack }, context: { token: string }) => {
+      return await postData(trackInput.body, context.token);
     }
   }
 };

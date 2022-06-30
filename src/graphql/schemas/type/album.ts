@@ -1,5 +1,5 @@
 export const album = `type Album {
-  _id: ID
+  id: ID
   name: String
   released: Int
   artists: [Artist]

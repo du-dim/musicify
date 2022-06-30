@@ -1,4 +1,4 @@
-export const inFavorites = `input FavoritesInput {
+export const inFavourites = `input FavouritesInput {
   userId: ID!
   bands: [ID]
   genres: [ID]

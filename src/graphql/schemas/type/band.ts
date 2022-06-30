@@ -1,8 +1,8 @@
 export const band = `type Band {
-  _id: ID!
+  id: ID!
   name: String
   origin: String
   members: [Member]
   website: String
-  genres: String
+  genres: [Genre]
 }`;

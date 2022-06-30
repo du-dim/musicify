@@ -17,6 +17,7 @@ export const postData = async (body: IArtist, token: string) => {
     if (response.ok) {
       const data = (await response.json()) as IArtist;
       data.id = data._id;
+      data.bands = data.bandsIds;
       return data;
     }
     throw Error('Ошибка HTTP: ' + response.status);

@@ -1,8 +1,7 @@
 export const user = `type User {
-  _id: ID!
+  id: ID!
   firstName: String
-  secondName: String
-  middleName: String
+  secondName: String  
   password: String!
   email: String!  
 }`;

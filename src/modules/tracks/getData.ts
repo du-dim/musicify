@@ -4,13 +4,15 @@ import { ITrack } from '../../types/interface.js';
 
 const TRACK_URL = process.env.TRACK_URL as string;
 
-export const tracks = async () => {
+export const getData = async () => {
   try {
     const response = await fetch(TRACK_URL);
     if (response.ok) {
       const data = (await response.json()) as { items: ITrack[] };
       data.items.forEach((d) => {
         d.id = d._id;
+        d.bands = d.bandsIds;
+        d.genres = d.genresIds;
       });
       return data.items;
     }

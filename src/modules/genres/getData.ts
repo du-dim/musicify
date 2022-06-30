@@ -4,7 +4,7 @@ import { IGenre } from '../../types/interface.js';
 
 const GENRE_URL = process.env.GENRE_URL as string;
 
-export const genres = async () => {
+export const getData = async () => {
   try {
     const response = await fetch(GENRE_URL);
     if (response.ok) {

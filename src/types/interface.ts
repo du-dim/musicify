@@ -8,13 +8,14 @@ export interface IArtist {
   birthPlace: string;
   country: string;
   bandsIds: string[];
+  bands: string[];
   instruments: string[];
 }
 export interface IUser {
   _id: string;
   id: string;
   firstName: string;
-  lastName: string;
+  secondName: string;
   password: string;
   email: string;
 }
@@ -24,8 +25,10 @@ export interface IBand {
   name: string;
   origin: string;
   membersId: IMember[];
+  members: IMember[];
   website: string;
   genresIds: string[];
+  genres: string[];
 }
 export interface IGenre {
   _id: string;
@@ -41,9 +44,11 @@ export interface ITrack {
   title: string;
   albumId: string;
   bandsIds: string[];
+  bands: string[];
   duration: number;
   released: number;
   genresIds: string[];
+  genres: string[];
 }
 export interface IAlbum {
   _id: string;
@@ -51,19 +56,27 @@ export interface IAlbum {
   name: string;
   released: number;
   artistsIds: string[];
+  artists: string[];
   bandsIds: string[];
-  trackIds: string[];
+  bands: string[];
+  tracksIds: string[];
+  tracks: string[];
   genresIds: string[];
+  genres: string[];
   image: string;
 }
-export interface IFavorites {
+export interface IFavourites {
   _id: string;
   id: string;
   userId: string;
   bandsIds: string[];
+  bands: string[];
   genresIds: string[];
+  genres: string[];
   artistsIds: string[];
+  artists: string[];
   tracksIds: string[];
+  tracks: string[];
 }
 export interface IJWT {
   jwt: string;

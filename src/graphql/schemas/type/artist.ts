@@ -1,5 +1,5 @@
 export const artist = `type Artist {
-  _id: ID!
+  id: ID!
   firstName: String
   secondName: String
   middleName: String

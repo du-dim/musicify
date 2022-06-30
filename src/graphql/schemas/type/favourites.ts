@@ -1,5 +1,5 @@
 export const favourites = `type Favourites {
-  _id: ID!
+  id: ID!
   userId: ID!
   bands: [ID]
   genres: [ID]

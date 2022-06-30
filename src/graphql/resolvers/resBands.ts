@@ -1,14 +1,14 @@
-import * as getData from '../../modules/redirectionModules.js';
-import { IGenre } from '../../types/interface.js';
-import { postData } from '../../modules/genres/postData.js';
+import { IBand } from '../../types/interface.js';
+import { getData } from '../../modules/bands/getData.js';
+import { postData } from '../../modules/bands/postData.js';
 
-export const resGenres = {
+export const resBands = {
   Query: {
-    genres: async () => await getData.genres()
+    bands: async () => await getData()
   },
   Mutation: {
-    createGenre: async (_: any, genreInput: { body: IGenre }, context: { token: string }) => {
-      return await postData(genreInput.body, context.token);
+    createBand: async (_: any, bandInput: { body: IBand }, context: { token: string }) => {
+      return await postData(bandInput.body, context.token);
     }
   }
 };

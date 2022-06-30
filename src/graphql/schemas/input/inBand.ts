@@ -1,7 +1,7 @@
 export const inBand = `input BandInput {
   name: String
   origin: String
-  members: [Member]
+  members: [InputMember]
   website: String
-  genres: String
+  genres: [GenreInput]
 }`;

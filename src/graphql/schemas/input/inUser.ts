@@ -1,7 +1,6 @@
 export const inUser = `input UserInput {
   firstName: String
-  secondName: String
-  middleName: String
+  secondName: String  
   password: String!
   email: String! 
 }`;

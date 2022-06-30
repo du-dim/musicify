@@ -4,13 +4,12 @@ import { IUser } from '../../types/interface.js';
 
 const USER_URL = process.env.USER_URL as string;
 
-export const postData = async (body: IUser, token: string) => {
+export const postData = async (body: IUser) => {
   try {
     const response = await fetch(`${USER_URL}/register`, {
       method: 'POST',
       headers: {
-        'Content-type': 'application/json;charset=UTF-8',
-        authorization: token
+        'Content-type': 'application/json;charset=UTF-8'
       },
       body: JSON.stringify(body)
     });

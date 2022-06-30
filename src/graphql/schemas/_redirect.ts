@@ -5,5 +5,6 @@ export { genre } from './type/genre.js';
 export { track } from './type/track.js';
 export { favourites } from './type/favourites.js';
 export { user } from './type/user.js';
+export { member } from './type/member.js';
 export { mutation } from './mutation.js';
 export { query } from './query.js';

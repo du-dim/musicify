@@ -1,8 +1,8 @@
 export const inTrack = `input TrackInput {
   title: String
   albums: String
-  bands: [Band]
+  bands: [BandInput]
   duration: Int
   released: Int
-  genres: [Genre]
+  genres: [GenreInput]
 }`;
