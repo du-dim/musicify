@@ -26,6 +26,7 @@ export interface IBand {
 }
 export interface IGenre {
   _id: string;
+  id: string;
   name: string;
   description: string;
   country: string;
@@ -57,6 +58,9 @@ export interface IFavorite {
   genresIds: string[];
   artistsIds: string[];
   tracksIds: string[];
+}
+export interface IJWT {
+  jwt: string;
 }
 export interface IMember {
   id: string;
