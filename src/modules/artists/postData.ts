@@ -20,7 +20,7 @@ export const postData = async (body: IArtist, token: string) => {
       data.bands = data.bandsIds;
       return data;
     }
-    throw Error('Ошибка HTTP: ' + response.status);
+    throw Error('Error artists service: ' + response.status);
   } catch (error) {
     console.log(`${error}`);
   }

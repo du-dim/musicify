@@ -18,7 +18,7 @@ export const postData = async (body: IUser) => {
       data.id = data._id;
       return data;
     }
-    throw Error('Ошибка HTTP: ' + response.status);
+    throw Error('Error users service: ' + response.status);
   } catch (error) {
     console.log(`${error}`);
   }

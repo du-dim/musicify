@@ -6,4 +6,5 @@ createBand(body: BandInput): Band!
 createGenre(body: GenreInput): Genre!
 createTrack(body: TrackInput): Track!
 createFavourites(body: FavouritesInput): Favourites!
+getJwt(body: UserInput): JWT!
 }`;

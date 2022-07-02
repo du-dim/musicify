@@ -12,6 +12,7 @@ export const typeDefs = gql`
   ${input.inMember}
   ${input.inFavourites}
   ${schema.user}
+  ${schema.jwt}
   ${schema.album}
   ${schema.artist}
   ${schema.genre}

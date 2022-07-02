@@ -21,7 +21,7 @@ export const postData = async (body: IBand, token: string) => {
       data.members = data.membersId;
       return data;
     }
-    throw Error('Ошибка HTTP: ' + response.status);
+    throw Error('Error bands service: ' + response.status);
   } catch (error) {
     console.log(`${error}`);
   }

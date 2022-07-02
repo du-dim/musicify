@@ -16,7 +16,7 @@ export const getData = async () => {
       });
       return data.items;
     }
-    throw Error('Ошибка HTTP: ' + response.status);
+    throw Error('Error tracks service: ' + response.status);
   } catch (error) {
     console.log(`${error}`);
   }

@@ -4,17 +4,13 @@ import { IBand } from '../../types/interface.js';
 
 const BAND_URL = process.env.BAND_URL as string;
 
-export const getData = async () => {
+export const getBand = async (id: string) => {
   try {
-    const response = await fetch(BAND_URL);
+    const response = await fetch(`${BAND_URL}/${id}`);
     if (response.ok) {
-      const data = (await response.json()) as { items: IBand[] };
-      data.items.forEach((d) => {
-        d.id = d._id;
-        d.genres = d.genresIds;
-        d.members = d.membersId;
-      });
-      return data.items;
+      const data = (await response.json()) as IBand;
+      data.id = data._id;
+      return data;
     }
     throw Error('Error bands service: ' + response.status);
   } catch (error) {

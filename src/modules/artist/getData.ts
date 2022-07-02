@@ -4,16 +4,13 @@ import { IArtist } from '../../types/interface.js';
 
 const ARTIST_URL = process.env.ARTIST_URL as string;
 
-export const getData = async () => {
+export const getArtist = async (id: string) => {
   try {
-    const response = await fetch(ARTIST_URL);
+    const response = await fetch(`${ARTIST_URL}/${id}`);
     if (response.ok) {
-      const data = (await response.json()) as { items: IArtist[] };
-      data.items.forEach((d) => {
-        d.id = d._id;
-        d.bands = d.bandsIds;
-      });
-      return data.items;
+      const data = (await response.json()) as IArtist;
+      data.id = data._id;
+      return data;
     }
     throw Error('Error artists service: ' + response.status);
   } catch (error) {

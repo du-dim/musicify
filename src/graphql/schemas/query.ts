@@ -4,5 +4,10 @@ export const query = `type Query {
   bands: [Band]
   genres: [Genre]  
   tracks: [Track]
-  favourites: [Favourites]  
+  favourites: [Favourites]
+  album(id: ID!): Album 
+  artist(id: ID!): Artist 
+  band(id: ID!): Band
+  genre(id: ID!): Genre
+  track(id: ID!): Track    
 }`;

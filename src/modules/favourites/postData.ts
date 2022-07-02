@@ -23,7 +23,7 @@ export const postData = async (body: IFavourites, token: string) => {
       data.artists = data.artistsIds;
       return data;
     }
-    throw Error('Ошибка HTTP: ' + response.status);
+    throw Error('Error favourites service: ' + response.status);
   } catch (error) {
     console.log(`${error}`);
   }
