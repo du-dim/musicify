@@ -81,6 +81,10 @@ export interface IFavourites {
 export interface IJWT {
   jwt: string;
 }
+export interface IDelete {
+  acknowledged: boolean;
+  deletedCount: number;
+}
 export interface IMember {
   id: string;
 }

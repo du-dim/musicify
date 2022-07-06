@@ -20,6 +20,7 @@ export const typeDefs = gql`
   ${schema.track}
   ${schema.favourites}
   ${schema.member}
+  ${schema.del}
   ${schema.query}
   ${schema.mutation}
 `;

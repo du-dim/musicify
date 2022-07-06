@@ -7,5 +7,6 @@ export { favourites } from './type/favourites.js';
 export { user } from './type/user.js';
 export { jwt } from './type/jwt.js';
 export { member } from './type/member.js';
+export { del } from './type/del.js';
 export { mutation } from './mutation.js';
 export { query } from './query.js';
