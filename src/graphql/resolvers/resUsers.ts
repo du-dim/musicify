@@ -1,12 +1,12 @@
-import { IUser } from '../../types/interface.js';
-import { postData } from '../../modules/user/postData.js';
-import { getData } from '../../modules/user/jwt.js';
+import { IUser } from '../../interfaceTS/interface.js';
+import { createData } from '../../services/userService/createData.js';
+import { getData } from '../../services/userService/getJWT.js';
 
 export const resUsers = {
   Query: {},
   Mutation: {
     createUser: async (_: any, userInput: { body: IUser }) => {
-      return await postData(userInput.body);
+      return await createData(userInput.body);
     },
     getJwt: async (_: any, userInput: { body: IUser }) => {
       return await getData(userInput.body);

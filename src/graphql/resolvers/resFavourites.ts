@@ -1,6 +1,6 @@
-import { IFavourites } from '../../types/interface.js';
-import { getData } from '../../modules/favourites/getData.js';
-import { postData } from '../../modules/favourites/postData.js';
+import { IFavourites } from '../../interfaceTS/interface.js';
+import { getData } from '../../services/favouriteService/getData.js';
+import { createData } from '../../services/favouriteService/createData.js';
 
 export const resFavourites = {
   Query: {
@@ -12,7 +12,7 @@ export const resFavourites = {
       favouritesInput: { body: IFavourites },
       context: { token: string }
     ) => {
-      return await postData(favouritesInput.body, context.token);
+      return await createData(favouritesInput.body, context.token);
     }
   }
 };
