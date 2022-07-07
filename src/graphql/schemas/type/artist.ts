@@ -9,7 +9,7 @@ export const typeArtist = gql`
     birthDate: String
     birthPlace: String
     country: String
-    bands: [ID]
+    bands: [Band]
     instruments: String
   }
   input ArtistInput {
@@ -19,7 +19,7 @@ export const typeArtist = gql`
     birthDate: String
     birthPlace: String
     country: String
-    bands: [ID]
+    bands: [BandInputID]
     instruments: String
   }
   input ArtistInputID {
@@ -30,7 +30,7 @@ export const typeArtist = gql`
     birthDate: String
     birthPlace: String
     country: String
-    bands: [ID]
+    bands: [BandInputID]
     instruments: String
   }
 `;
