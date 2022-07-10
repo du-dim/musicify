@@ -1,4 +1,4 @@
-import { IFavourites } from '../../interfaceTS/interface.js';
+import { IFavouritesNew } from '../../interfaceTS/interfaceNew.js';
 import { getData } from '../../services/favouriteService/getData.js';
 import { createData } from '../../services/favouriteService/createData.js';
 
@@ -9,7 +9,7 @@ export const resFavourites = {
   Mutation: {
     createFavourites: async (
       _: any,
-      favouritesInput: { body: IFavourites },
+      favouritesInput: { body: IFavouritesNew },
       context: { token: string }
     ) => {
       return await createData(favouritesInput.body, context.token);

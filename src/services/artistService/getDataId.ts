@@ -1,5 +1,6 @@
 import fetch from 'node-fetch';
 import 'dotenv/config';
+import { IArtistNew } from '../../interfaceTS/interfaceNew.js';
 import { IArtist } from '../../interfaceTS/interface.js';
 
 const ARTIST_URL = process.env.ARTIST_URL as string;
@@ -8,8 +9,9 @@ export const getDataId = async (id: string) => {
   try {
     const response = await fetch(`${ARTIST_URL}/${id}`);
     if (response.ok) {
-      const data = (await response.json()) as IArtist;
+      const data = (await response.json()) as IArtistNew & IArtist;
       data.id = data._id;
+      data.bands = data.bandsIds;
       return data;
     }
     throw Error('Error artists service: ' + response.status);

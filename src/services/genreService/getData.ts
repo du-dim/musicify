@@ -1,5 +1,6 @@
 import fetch from 'node-fetch';
 import 'dotenv/config';
+import { IGenreNew } from '../../interfaceTS/interfaceNew.js';
 import { IGenre } from '../../interfaceTS/interface.js';
 
 const GENRE_URL = process.env.GENRE_URL as string;
@@ -8,7 +9,7 @@ export const getData = async () => {
   try {
     const response = await fetch(GENRE_URL);
     if (response.ok) {
-      const data = (await response.json()) as { items: IGenre[] };
+      const data = (await response.json()) as { items: (IGenre & IGenreNew)[] };
       data.items.forEach((d) => {
         d.id = d._id;
       });

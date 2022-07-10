@@ -3,34 +3,34 @@ import { gql } from 'apollo-server';
 export const typeArtist = gql`
   type Artist {
     id: ID!
-    firstName: String
-    secondName: String
+    firstName: String!
+    secondName: String!
     middleName: String
     birthDate: String
     birthPlace: String
-    country: String
+    country: String!
     bands: [Band]
-    instruments: String
+    instruments: [String]
   }
   input ArtistInput {
-    firstName: String
-    secondName: String
+    firstName: String!
+    secondName: String!
     middleName: String
     birthDate: String
     birthPlace: String
-    country: String
-    bands: [BandInputID]
-    instruments: String
+    country: String!
+    bands: [ID]
+    instruments: [String]
   }
   input ArtistInputID {
     id: ID!
-    firstName: String
-    secondName: String
+    firstName: String!
+    secondName: String!
     middleName: String
     birthDate: String
     birthPlace: String
-    country: String
-    bands: [BandInputID]
-    instruments: String
+    country: String!
+    bands: [ID]
+    instruments: [String]
   }
 `;

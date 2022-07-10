@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import 'dotenv/config';
-import { IDelete } from '../../interfaceTS/interface.js';
+import { IDelete } from '../../interfaceTS/interfaceNew.js';
 
 const BAND_URL = process.env.BAND_URL as string;
 

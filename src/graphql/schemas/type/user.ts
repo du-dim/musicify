@@ -14,10 +14,7 @@ export const typeUser = gql`
     password: String!
     email: String!
   }
-  input UserInputID {
-    id: ID!
-    firstName: String
-    secondName: String
+  input UserInputJWT {
     password: String!
     email: String!
   }

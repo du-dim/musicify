@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import 'dotenv/config';
-import { IDelete } from '../../interfaceTS/interface.js';
+import { IDelete } from '../../interfaceTS/interfaceNew.js';
 
 const TRACK_URL = process.env.TRACK_URL as string;
 

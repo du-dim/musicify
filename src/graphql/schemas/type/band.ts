@@ -14,7 +14,7 @@ export const typeBand = gql`
     origin: String
     members: [MemberInput]
     website: String
-    genres: [GenreInput]
+    genres: [ID]
   }
   input BandInputID {
     id: ID!
@@ -22,6 +22,6 @@ export const typeBand = gql`
     origin: String
     members: [MemberInput]
     website: String
-    genres: [GenreInput]
+    genres: [ID]
   }
 `;

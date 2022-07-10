@@ -4,7 +4,7 @@ export const typeTrack = gql`
   type Track {
     id: ID!
     title: String
-    albums: String
+    album: Album
     bands: [Band]
     duration: Int
     released: Int
@@ -12,19 +12,19 @@ export const typeTrack = gql`
   }
   input TrackInput {
     title: String
-    albums: String
-    bands: [BandInput]
+    album: ID
+    bands: [ID]
     duration: Int
     released: Int
-    genres: [GenreInput]
+    genres: [ID]
   }
   input TrackInputID {
     id: ID!
     title: String
-    albums: String
-    bands: [BandInput]
+    album: ID
+    bands: [ID]
     duration: Int
     released: Int
-    genres: [GenreInput]
+    genres: [ID]
   }
 `;

@@ -1,4 +1,5 @@
-import { IBand, ITrack, IArtist, IAlbum, IFavourites } from '../../interfaceTS/interface.js';
+import { ITrack, IArtist, IAlbum, IFavourites, IBand } from '../../interfaceTS/interface.js';
+import { IBandNew } from '../../interfaceTS/interfaceNew.js';
 import { getData } from '../../services/bandService/getData.js';
 import { getDataId } from '../../services/bandService/getDataId.js';
 import { createData } from '../../services/bandService/createData.js';
@@ -22,6 +23,9 @@ export const resBands = {
     bands: async (artist: IArtist) =>
       (await getData())?.filter((band) => artist.bandsIds.includes(band.id))
   },
+  Band: {
+    members: async (band: IBand) => (await getDataId(band._id))?.members
+  },
   Query: {
     bands: async () => await getData(),
     band: async (_: any, bandId: { id: string }) => {
@@ -29,13 +33,13 @@ export const resBands = {
     }
   },
   Mutation: {
-    createBand: async (_: any, bandInput: { body: IBand }, context: { token: string }) => {
+    createBand: async (_: any, bandInput: { body: IBandNew }, context: { token: string }) => {
       return await createData(bandInput.body, context.token);
     },
     deleteBand: async (_: any, bandId: { id: string }, context: { token: string }) => {
       return await deleteData(bandId.id, context.token);
     },
-    updateBand: async (_: any, bandId: { body: IBand }, context: { token: string }) => {
+    updateBand: async (_: any, bandId: { body: IBandNew }, context: { token: string }) => {
       return await updateData(bandId.body, context.token);
     }
   }

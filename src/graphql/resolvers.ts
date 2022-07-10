@@ -7,6 +7,32 @@ import { resUsers } from './resolvers/resUsers.js';
 import { resFavourites } from './resolvers/resFavourites.js';
 
 export const resolvers = {
+  Album: {
+    ...resArtists.Album,
+    ...resTracks.Album,
+    ...resBands.Album,
+    ...resGenres.Album
+  },
+  Favourites: {
+    ...resArtists.Favourites,
+    ...resTracks.Favourites,
+    ...resBands.Favourites,
+    ...resGenres.Favourites
+  },
+  Artist: {
+    ...resBands.Artist
+  },
+  Track: {
+    ...resBands.Track,
+    ...resGenres.Track
+  },
+  Band: {
+    ...resGenres.Band
+    //...resBands
+  },
+  Member: {
+    ...resArtists
+  },
   Query: {
     ...resAlbums.Query,
     ...resArtists.Query,

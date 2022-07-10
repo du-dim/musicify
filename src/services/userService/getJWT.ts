@@ -1,10 +1,10 @@
 import fetch from 'node-fetch';
 import 'dotenv/config';
-import { IJWT, IUser } from '../../interfaceTS/interface.js';
+import { IJWT } from '../../interfaceTS/interfaceNew.js';
 
 const USER_URL = process.env.USER_URL as string;
 
-export const getData = async (body: IUser) => {
+export const getData = async (body: { email: string; password: string }) => {
   try {
     const response = await fetch(`${USER_URL}/login`, {
       method: 'POST',

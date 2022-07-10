@@ -1,10 +1,11 @@
 import fetch from 'node-fetch';
 import 'dotenv/config';
+import { IGenreNew } from '../../interfaceTS/interfaceNew.js';
 import { IGenre } from '../../interfaceTS/interface.js';
 
 const GENRE_URL = process.env.GENRE_URL as string;
 
-export const createData = async (body: IGenre, token: string) => {
+export const createData = async (input: IGenreNew, token: string) => {
   try {
     const response = await fetch(GENRE_URL, {
       method: 'POST',
@@ -12,10 +13,10 @@ export const createData = async (body: IGenre, token: string) => {
         'Content-type': 'application/json;charset=UTF-8',
         authorization: token
       },
-      body: JSON.stringify(body)
+      body: JSON.stringify(input)
     });
     if (response.ok) {
-      const data = (await response.json()) as IGenre;
+      const data = (await response.json()) as IGenre & IGenreNew;
       data.id = data._id;
       return data;
     }

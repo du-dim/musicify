@@ -1,6 +1,6 @@
 import fetch from 'node-fetch';
 import 'dotenv/config';
-import { IDelete } from '../../interfaceTS/interface.js';
+import { IDelete } from '../../interfaceTS/interfaceNew.js';
 
 const ALBUM_URL = process.env.ALBUM_URL as string;
 
