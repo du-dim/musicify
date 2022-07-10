@@ -15,13 +15,6 @@ export const resArtists = {
     artists: async (favourites: IFavourites) =>
       (await getData())?.filter((artist) => favourites.artistsIds.includes(artist.id))
   },
-  Member: {
-    firstName: async (member: IMember) => (await getDataId(member.artistId))?.firstName,
-    secondName: async (member: IMember) => (await getDataId(member.artistId))?.secondName,
-    middleName: async (member: IMember) => (await getDataId(member.artistId))?.middleName,
-    instrument: (member: IMember) => member.instrument,
-    years: (member: IMember) => member.years
-  },
   Query: {
     artists: async () => await getData(),
     artist: async (_: any, artistId: { id: string }) => {
@@ -40,3 +33,6 @@ export const resArtists = {
     }
   }
 };
+function firstName(firstName: any) {
+  throw new Error('Function not implemented.');
+}

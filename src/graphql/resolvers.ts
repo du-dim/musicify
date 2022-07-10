@@ -5,6 +5,7 @@ import { resGenres } from './resolvers/resGenre.js';
 import { resTracks } from './resolvers/resTracks.js';
 import { resUsers } from './resolvers/resUsers.js';
 import { resFavourites } from './resolvers/resFavourites.js';
+import { resMember } from './resolvers/resMember.js';
 
 export const resolvers = {
   Album: {
@@ -27,11 +28,8 @@ export const resolvers = {
     ...resGenres.Track
   },
   Band: {
-    ...resGenres.Band
-    //...resBands
-  },
-  Member: {
-    ...resArtists
+    ...resGenres.Band,
+    ...resMember.Band
   },
   Query: {
     ...resAlbums.Query,

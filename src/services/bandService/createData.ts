@@ -1,24 +1,19 @@
 import fetch from 'node-fetch';
 import 'dotenv/config';
-import { IBandNew, IMemberNew } from '../../interfaceTS/interfaceNew.js';
-import { IBand, IMember } from '../../interfaceTS/interface.js';
+import { IBandNew } from '../../interfaceTS/interfaceNew.js';
+import { IBand } from '../../interfaceTS/interface.js';
 
 const BAND_URL = process.env.BAND_URL as string;
 
 export const createData = async (input: IBandNew, token: string) => {
-  const body: IBand = {
+  const body = {
     _id: input.id,
     name: input.name,
     origin: input.origin,
     website: input.website,
     genresIds: input.genres,
-    members: []
+    members: input.members
   };
-  input.members.forEach((m, i) => {
-    body.members[i].artistId = m.artistId;
-    body.members[i].years = m.years;
-    body.members[i].instrument = m.instrument;
-  });
 
   try {
     const response = await fetch(BAND_URL, {

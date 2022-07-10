@@ -14,10 +14,10 @@ export const typeAlbum = gql`
   input AlbumInput {
     name: String
     released: Int
-    artists: [ArtistInput]
-    bands: [BandInput]
-    tracks: [TrackInput]
-    genres: [GenreInput]
+    artists: [ID]
+    bands: [ID]
+    tracks: [ID]
+    genres: [ID]
     image: String
   }
 
@@ -25,10 +25,10 @@ export const typeAlbum = gql`
     id: ID
     name: String
     released: Int
-    artists: [ArtistInput]
-    bands: [BandInput]
-    tracks: [TrackInput]
-    genres: [GenreInput]
+    artists: [ID]
+    bands: [ID]
+    tracks: [ID]
+    genres: [ID]
     image: String
   }
 `;

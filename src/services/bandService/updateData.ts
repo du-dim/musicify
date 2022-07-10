@@ -15,11 +15,6 @@ export const updateData = async (input: IBandNew, token: string) => {
       genresIds: input.genres,
       members: []
     };
-    input.members.forEach((m, i) => {
-      body.members[i].artistId = m.artistId;
-      body.members[i].years = m.years;
-      body.members[i].instrument = m.instrument;
-    });
 
     const response = await fetch(`${BAND_URL}/${body._id}`, {
       method: 'PUT',
