@@ -2,7 +2,6 @@ import { gql } from 'apollo-server';
 
 export const typeMutation = gql`
   type Mutation {
-    getJwt(body: UserInputJWT): JWT
     createUser(body: UserInput): User
     createAlbum(body: AlbumInput): Album
     createArtist(body: ArtistInput): Artist

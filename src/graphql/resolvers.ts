@@ -32,6 +32,7 @@ export const resolvers = {
     ...resMember.Band
   },
   Query: {
+    ...resUsers.Query,
     ...resAlbums.Query,
     ...resArtists.Query,
     ...resBands.Query,
