@@ -5,23 +5,15 @@ import { IFavouritesNew } from '../../interfaceTS/interfaceNew.js';
 
 const FAVOURITE_URL = process.env.FAVOURITE_URL as string;
 
-export const createData = async (input: IFavouritesNew, token: string) => {
-  const body: IFavourites = {
-    _id: input.id,
-    userId: input.userId,
-    bandsIds: input.bands,
-    genresIds: input.genres,
-    artistsIds: input.artists,
-    tracksIds: input.tracks
-  };
+export const addBand = async (id: string, token: string) => {
   try {
-    const response = await fetch(FAVOURITE_URL, {
-      method: 'POST',
+    const response = await fetch(FAVOURITE_URL + '/add', {
+      method: 'PUT',
       headers: {
         'Content-type': 'application/json;charset=UTF-8',
         authorization: token
       },
-      body: JSON.stringify(body)
+      body: JSON.stringify({ id, type: 'bands' })
     });
     if (response.ok) {
       const data = (await response.json()) as IFavourites & IFavouritesNew;

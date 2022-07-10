@@ -5,24 +5,24 @@ import { IFavouritesNew } from '../../interfaceTS/interfaceNew.js';
 
 const FAVOURITE_URL = process.env.FAVOURITE_URL as string;
 
-export const getData = async (token: string) => {
+export const addTrack = async (id: string, token: string) => {
   try {
-    const response = await fetch(FAVOURITE_URL, {
-      method: 'GET',
+    const response = await fetch(FAVOURITE_URL + '/add', {
+      method: 'PUT',
       headers: {
         'Content-type': 'application/json;charset=UTF-8',
         authorization: token
-      }
+      },
+      body: JSON.stringify({ id, type: 'tracks' })
     });
     if (response.ok) {
-      const data = (await response.json()) as { items: (IFavourites & IFavouritesNew)[] };
-      data.items.forEach((d) => {
-        d.bands = d.bandsIds;
-        d.tracks = d.tracksIds;
-        d.genres = d.genresIds;
-        d.artists = d.artistsIds;
-      });
-      return data.items;
+      const data = (await response.json()) as IFavourites & IFavouritesNew;
+      data.id = data._id;
+      data.bands = data.bandsIds;
+      data.tracks = data.tracksIds;
+      data.genres = data.genresIds;
+      data.artists = data.artistsIds;
+      return data;
     }
     throw Error('Error favourites service: ' + response.status);
   } catch (error) {

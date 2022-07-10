@@ -9,6 +9,10 @@ export const typeMutation = gql`
     createGenre(body: GenreInput): Genre
     createTrack(body: TrackInput): Track
     createFavourites(body: FavouritesInput): Favourites
+    addArtist(id: ID!): Favourites
+    addTrack(id: ID!): Favourites
+    addBand(id: ID!): Favourites
+    addGenre(id: ID!): Favourites
     deleteAlbum(id: ID!): DEL
     deleteArtist(id: ID!): DEL
     deleteBand(id: ID!): DEL

@@ -51,7 +51,6 @@ export interface IAlbumNew {
   image: string;
 }
 export interface IFavouritesNew {
-  _id: string;
   id: string;
   userId: string;
   bands: string[];
